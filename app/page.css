@@ -1,0 +1,180 @@
+/* Global Style */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Manrope:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+body{
+    background-color: #1A1B22;
+    height: 100vh;
+}
+
+h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    line-height: 3.45rem;
+    color:#f8f8f8;
+    margin-bottom: 1rem;
+}
+
+h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color:#f8f8f8;
+}
+
+p{
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    letter-spacing: .1rem;
+    color: #f8f8f8;
+    margin-bottom: 3rem;
+}
+
+.container{
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+    padding: 3rem 0; 
+}
+
+.left-content{
+    width: 50%;
+}
+
+.right-content{
+    width: 50%;
+}
+
+/* Header */
+header{
+    margin: auto;
+    max-width: 80%;
+    padding: 1.25rem 0;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+}
+
+/* Service Offerings */
+.service-offerings{
+    margin: auto;
+    width: 100%;
+    height: 85%;
+    border: 3px solid #f8f8f8;
+}
+
+/* Logo Carousel */
+.social-proof{
+    padding: 2rem 3rem;
+}
+
+.logo-carousel{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    opacity: .6;
+}
+
+/* Contact Form */
+
+.form-row{
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+input,
+textarea{
+    background: transparent;
+    border: .5px solid rgba(248, 248, 248, .12);
+    border-radius: 3px;
+    font-size: .875rem;
+    padding: 1rem 2rem;
+}
+
+select{
+    background: transparent;
+    border: .5px solid rgba(248, 248, 248, .12);
+    border-radius: 3px;
+    padding: .938rem 2rem;
+    width: 100%;
+    font-size: .875rem;
+    color: rgba(248, 248, 248, .25);
+}
+
+.input-data{
+    position: relative;
+    color: rgba(248, 248, 248, .25);
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+}
+
+.input-data input,
+.input-data textarea{
+    width: 100%;
+}
+
+textarea{
+    resize: none;
+    height: 200px;
+}
+
+.input-data label{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: .5s;
+}
+
+/* Fucking select styling */
+
+.input-data select ~ label{
+    display: none;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label,
+.input-data textarea:focus ~ label,
+.input-data textarea:valid ~ label{
+    top: -25px;
+    left: 0;
+    /* color: #0F52B8; */
+}
+
+/* Insert box shadow glow */
+/* .input-data input:focus,
+.input-data input:valid,
+.input-data textarea:focus,
+.input-data textarea:valid{
+    border: .5px solid #0F52B8 !important;
+    box-shadow: 
+        0 0 15px #0F52B8;
+} */
+
+.submit{
+    color: #f8f8f8;
+    font-family: 'Manrope', sans-serif;
+    font-size: .875rem;
+    background: #0f52b8;
+    transition: .3s;
+    border-radius: 3px;
+}
+
+.submit:hover{
+    transform: scale(1.05);
+    /* Insert box shadow glow */
+}
