@@ -17,6 +17,7 @@ const LogoCarousel = () => {
   const images1 = ['wonf-logo.png', 'sd-botox-logo.png', 'trinity-logo.png']
   const images2 = ['scadc-actual.png', 'veloce-actual.png', 'cross-country-healthcare-logo.png']
   const images3 = ['ash-and-barrel-logo.png', 'smartboost-logo.png', 'soundful-logo.png']
+  const images4 = ['wellness-med-spa-logo.png', 'order-my-maid-logo.png', 'robbin-n-williams-logo.png']
 
   const [index, setIndex] = useState(0)
 
@@ -30,9 +31,10 @@ const LogoCarousel = () => {
 
   return (
     <div className="logo-carousel">
-        <Image className='logo' src={`/Assets/${images1[index]}`} width={100} height={30} />
-        <Image className='logo' src={`/Assets/${images2[index]}`} width={100} height={30} />
-        <Image className='logo' src={`/Assets/${images3[index]}`} width={125} height={20} />
+        <Image className='logo' src={`/Assets/${images1[index]}`} width={100} height={30} alt='clear-creations-clients' />
+        <Image className='logo' src={`/Assets/${images2[index]}`} width={100} height={30} alt='clear-creations-clients' />
+        <Image className='logo' src={`/Assets/${images3[index]}`} width={125} height={20} alt='clear-creations-clients' />
+        <Image className='logo' src={`/Assets/${images4[index]}`} width={80} height={30} alt='clear-creations-clients' />
     </div>
   )
 }
