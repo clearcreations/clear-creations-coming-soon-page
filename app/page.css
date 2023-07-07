@@ -45,7 +45,7 @@ p{
     width: 90%;
     height: 90%;
     display: flex;
-    gap: 3rem;
+    gap: 5rem;
 }
 
 .content-left,
@@ -92,8 +92,8 @@ p{
     justify-content: center;
     padding: 0 2rem;
     backdrop-filter: blur(20px);
-    animation: slide 30s linear infinite;
-    animation-delay: -2s;
+    /* animation: slide 30s linear infinite;
+    animation-delay: -2s; */
 }
 
 @keyframes slide{
@@ -152,6 +152,7 @@ p{
     border-radius: 50%;
     cursor: pointer;
     transition: 0.4s ease-in-out forwards;
+    z-index: 10;
 }
 
 .circle1.active{
@@ -173,28 +174,27 @@ p{
 }
 
 /* Service Contents */
-.service-contents{
-    height: 100%;
-    width: 90%;
+.service-contents {
     border: 3px solid salmon;
-    /* This is the recommended code */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.service-content{
     width: 100%;
     height: 100%;
-    display: none;
+    /* overflow: hidden; */
+  }
+  
+  .service-content {
+    width: 100%;
+    height: 100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-} 
-
+  }
+  
 .service-content.active{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     opacity: 1;
 }
 
@@ -203,66 +203,131 @@ p{
 .digmar-content{
     width: 100%;
     height: 100%;
-    dis
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.float-top{
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    left: 30%;
+    animation: floating 3s ease-in-out infinite
 }
 
 .icon-container{
-    width: 150px;
-    height: 150px;
-    background-color: #05C878;
-}
-
-
-
-/* .float .float-top{
+    width: 450px;
+    height: 450px;
+    border: 0.5px solid rgba(248, 248, 248, 0.12);
+    border-radius: 1.5625rem;
+    background: linear-gradient(180deg, #1C1E28 0%, rgba(28, 30, 40, 0.00) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
     position: absolute;
-    left: 5%;
-    width: 250px;
-    height: 250px;
-    animation: floating 3s ease-in-out infinite
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.float .float-btm{
+.service-text-container{
+    width: 23.5rem;
+    height: 8rem;
+    flex-shrink: 0;
+    padding: 1.63rem;
+    border: 0.5px solid rgba(248, 248, 248, 0.12);
+    border-radius: 1.5625rem;
+    background: linear-gradient(180deg, #1C1E28 0%, rgba(28, 30, 40, 0.00) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
     position: absolute;
-    top: 60%;
-    left: 45%;
-    width: 350px;
-    height: 350px;
-    animation: floating 3s ease-in-out infinite
-}
-
-.uiux-content .main-content .float .float-btm{
-    width: 500px;
-    height: 500px;
-    top: 0%;
-    left: 25%;
-}
-
-.uiux-content .main-content .float .float-top{
-    top: 60%;
-    left: -5%;
-}
-
-.digmar-content .main-content .float .float-btm{
-    width: 200px;
-    height: 200px;
-    z-index: -1;
-}
-
-.digmar-content .main-content .float .float-top{
     z-index: 3;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    color: #f8f8f8;
+}
+
+.icon-container:hover,
+.service-text-container:hover{
+    box-shadow: 1px 1px 80px -45px #f8f8f8;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.service-text-container .service-offer{
+    display: flex;
+    gap: .875rem;
+    white-space: nowrap;
+}
+
+.digmar-content .service-text-container .service-offer{
+    gap: .25rem 1.25rem;
+    flex-wrap: wrap;
+}
+
+.float-bottom{
+    position: absolute;
+    z-index: -1;
+    top: 60%;
+    right: 30%;
+    animation: floating 3s ease-in-out infinite
+}
+
+.top-img,
+.bottom-img{
+    width: 100%;
+    height: 100%;
+}
+
+.branding-content .float-top .top-img{
     width: 300px;
     height: 300px;
-    left: -5%;
+}
+
+.branding-content .float-bottom .bottom-img{
+    width: 350px;
+    height: 350px;
+}
+
+.uiux-content .float-top .top-img{
+    width: 300px;
+    height: 300px;
+}
+
+.uiux-content .float-top{
+    top: 60%;
+    left: 28%;
+}
+
+.uiux-content .float-bottom{
+    top: 10%;
+    right: 25%;
+}
+
+.uiux-content .float-bottom .bottom-img{
+    width: 500px;
+    height: 500px;
+}
+
+.digmar-content .float-top .top-img{
+    width: 300px;
+    height: 300px;
+}
+
+.digmar-content .float-bottom .bottom-img{
+    width: 250px;
+    height: 250px;
 }
 
 @keyframes floating {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }
     100%   { transform: translate(0, -0px); }   
-} */
-
-
+}
 
 /* Media Queries */
 @media (max-width: 750px){
