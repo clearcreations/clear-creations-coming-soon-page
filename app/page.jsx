@@ -48,7 +48,7 @@ const page = () => {
 	]
 
 	const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
-	
+
 	useEffect(() => {
 		//Change logo every 2 seconds
 		const interval = setInterval(() => {
@@ -58,6 +58,7 @@ const page = () => {
 		//Clear function
 		return () => clearInterval(interval)
 	}, []);
+	
 
 	return (
 		<div className='content'>

@@ -92,8 +92,8 @@ p{
     justify-content: center;
     padding: 0 2rem;
     backdrop-filter: blur(20px);
-    /* animation: slide 30s linear infinite;
-    animation-delay: -2s; */
+    animation: slide 90s linear infinite;
+    animation-delay: -2s;
 }
 
 @keyframes slide{
@@ -175,7 +175,6 @@ p{
 
 /* Service Contents */
 .service-contents {
-    border: 3px solid salmon;
     display: flex;
     justify-content: center;
     align-items: center;
