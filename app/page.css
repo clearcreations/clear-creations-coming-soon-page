@@ -16,8 +16,21 @@ body{
     background-color: #1A1B22;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
+h1, h2{
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 125%;
+}
+
+p{
+    font-family: 'Manrope', sans-serif;
+    font-size: .875rem;
+    line-height: 150%;
+}
+
+/* Layout Styling */
 .content{
     width: 100%;
     height: 100%;
@@ -48,13 +61,51 @@ body{
     height: 100%;
 }
 
+.content-left .content-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
 .service-container{
     width: 100%;
-    height: 100%;
-    /* border: 3px solid aqua; */
+    height: 80%;
     display: flex;
 }
 
+/* Social Proof Styling*/
+.social-proof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.logo-container{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    backdrop-filter: blur(20px);
+    animation: slide 30s linear infinite;
+    animation-delay: -2s;
+}
+
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+/* Progress Bar Styling*/
 .progress-container{
     height: 100%;
     width: 10%;
@@ -84,7 +135,6 @@ body{
 }
 
 .progress{
-    /* background-color: aquamarine; */
     background-color: #f8f8f8;
     box-shadow: 0px 0px 5px 0px #f8f8f8 inset, 0px 0px 5px .3px #f8f8f8;
     max-height: 425px;
@@ -122,29 +172,100 @@ body{
     box-shadow: 0px 0px 20px 0px #9966CC inset, 0px 0px 10px 5px #9966CC;
 }
 
+/* Service Contents */
 .service-contents{
     height: 100%;
     width: 90%;
-    border: 3px ridge white;
-    background-color: #9966CC;
-    color: #f8f8f8;
-    font-size: 5rem;
+    border: 3px solid salmon;
+    /* This is the recommended code */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .service-content{
+    width: 100%;
+    height: 100%;
     display: none;
-}
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+} 
 
 .service-content.active{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
 }
+
+.branding-content,
+.uiux-content,
+.digmar-content{
+    width: 100%;
+    height: 100%;
+    dis
+}
+
+.icon-container{
+    width: 150px;
+    height: 150px;
+    background-color: #05C878;
+}
+
+
+
+/* .float .float-top{
+    position: absolute;
+    left: 5%;
+    width: 250px;
+    height: 250px;
+    animation: floating 3s ease-in-out infinite
+}
+
+.float .float-btm{
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    width: 350px;
+    height: 350px;
+    animation: floating 3s ease-in-out infinite
+}
+
+.uiux-content .main-content .float .float-btm{
+    width: 500px;
+    height: 500px;
+    top: 0%;
+    left: 25%;
+}
+
+.uiux-content .main-content .float .float-top{
+    top: 60%;
+    left: -5%;
+}
+
+.digmar-content .main-content .float .float-btm{
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+}
+
+.digmar-content .main-content .float .float-top{
+    z-index: 3;
+    width: 300px;
+    height: 300px;
+    left: -5%;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+} */
+
 
 
 /* Media Queries */
-@media (max-width: 500px){
+@media (max-width: 750px){
     .content-container{
         flex-direction: column;
     }
@@ -156,8 +277,26 @@ body{
 
     .service-container{
         flex-direction: column;
+        height: 60vh;
+    }
+
+    .service-contents{
+        width: 100%;
     }
 
     .progress-container{
+        width: 100%;
+        height: 10%;
+        /* padding: 50px 0; */
+    }
+
+    .progress-bar{
+        max-height: 50px;
+        flex-direction: row;
+    }
+
+    .progress-bar::before{
+        width: 90%;
+        height: 1.5px;
     }
 }
