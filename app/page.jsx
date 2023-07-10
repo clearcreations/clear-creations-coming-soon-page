@@ -91,12 +91,27 @@ const page = () => {
 			<div className="main-content">
 				<div className="content-inner content-left">
 					<div className="services-section">
-
+						<div className="progress-bar"></div>
+						<div className="services">
+							<div className="float float-top"></div>
+							<div className="service-content">
+								<div className="icon-container"></div>
+								<div className="text-container"></div>
+							</div>
+							<div className="float float-bottom"></div>
+						</div>
 					</div>
 				</div>
 				<div className="content-inner content-right">
 					<div className="form-section">
-						
+						<div className="form-text">
+							<h1 className="form-heading">
+								
+							</h1>
+							<p className="form-body">
+
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
