@@ -9,6 +9,8 @@ import HeaderLogo from '../public/Assets/clear-creations-header-logo.png'
 import Progress from './Progress'
 
 const page = () => {
+
+	// Email Scripts
 	const form = useRef();
 
 	const sendEmail = (e) => {
@@ -32,6 +34,7 @@ const page = () => {
 			);
 	};
 
+	// Logo Carousel Script
 	const logos = [
 		'/Assets/ash-and-barrel-logo.png',
 		'/Assets/cross-country-healthcare-logo.png',
@@ -57,58 +60,43 @@ const page = () => {
 
 		//Clear function
 		return () => clearInterval(interval)
-	}, []);
-	
+	}, []);	
+
+	// Service Dropdown
+		const [isOpen, setIsOpen] = useState(false);
+		const [selectedOption, setSelectedOption] = useState('');
+	  
+		const options = [
+		  'Branding',
+		  'UI UX Design',
+		  'Social Media',
+		  'Paid Ads',
+		  'SEO'
+		];
+	  
+		const handleDropdownClick = () => {
+		  setIsOpen(!isOpen);
+		};
+	  
+		const handleOptionSelect = (option) => {
+		  setSelectedOption(option);
+		  setIsOpen(false);
+		};
 
 	return (
 		<div className='content'>
-			<div className="content-container">
-				
-				<div className="content-left">
-					<div className="content-inner">
-						<Progress/>
-						<div className="social-proof">
-      						<div className="logo-container">
-        						{logos.map((logo, index) => (
-								<div
-									key={index}
-									className={`logo ${index === currentLogoIndex ? 'active' : ''}`}
-								>
-									<Image 
-										src={logo}
-										alt={`Logo ${index + 1}`}
-										width={90}
-										height={25}
-								/>
-								</div>
-								))}
-								{logos.map((logo, index) => (
-								<div
-									key={index}
-									className={`logo ${index === currentLogoIndex ? 'active' : ''}`}
-								>
-									<Image 
-										src={logo}
-										alt={`Logo ${index + 1}`}
-										width={90}
-										height={25}
-								/>
-								</div>
-								))}
-							</div>
-						</div>
+			<div className="header">
+				<Image src={HeaderLogo} alt='Clear Creations | Charlotte Branding Agency'/>
+			</div>
+			<div className="main-content">
+				<div className="content-inner content-left">
+					<div className="services-section">
+
 					</div>
 				</div>
-				<div className="content-right">
-					<div className="content-inner">
-					<div className="form-text">
-						<h1 className='form-heading'>We May Be Enhancing Our User Experience, But Don't Hesitate To Contact Us!</h1>
-						<p className="form-body">
-							Although our website is under construction, we are still accepting new client opportunities.
-							Need help developing the perfect brand, website, mobile app, or campagin? Fill out the form
-							to book a consultation.
-						</p>
-					</div>
+				<div className="content-inner content-right">
+					<div className="form-section">
+						
 					</div>
 				</div>
 			</div>
