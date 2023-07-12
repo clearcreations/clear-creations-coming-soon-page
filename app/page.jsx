@@ -63,25 +63,6 @@ const page = () => {
 	}, []);	
 
 	// Service Dropdown
-		const [isOpen, setIsOpen] = useState(false);
-		const [selectedOption, setSelectedOption] = useState('');
-	  
-		const options = [
-		  'Branding',
-		  'UI UX Design',
-		  'Social Media',
-		  'Paid Ads',
-		  'SEO'
-		];
-	  
-		const handleDropdownClick = () => {
-		  setIsOpen(!isOpen);
-		};
-	  
-		const handleOptionSelect = (option) => {
-		  setSelectedOption(option);
-		  setIsOpen(false);
-		};
 
 	return (
 		<div className='content'>
@@ -106,12 +87,54 @@ const page = () => {
 					<div className="form-section">
 						<div className="form-text">
 							<h1 className="form-heading">
-								
+								Empower Your Business Vision With Unparalleled Expertise
 							</h1>
 							<p className="form-body">
-
+								While our website undergoes maintenance, our results-driven branding agency 
+								remains fully operational, dedicated to empowering entrepreneurs like you.
+								Tap into our strategic prowess and disruptive creativity to turn your vision into reality,
+								and find clarity today.
 							</p>
 						</div>
+						<form className='form-container' ref={form} onSubmit={sendEmail}>
+						<div className="form-row">
+						<div className="input-data">
+							<input type="text" name="name" id="name" required />
+							<label htmlFor="name">Name</label>
+						</div>
+						<div className="input-data">
+							<input type="text" name="company" id="company" required />
+							<label htmlFor="company">Company Name</label>
+						</div>
+						</div>
+						<div className="form-row">
+							<div className="input-data">
+								<input type="email" name="email" id="email" required />
+								<label htmlFor="email">Email</label>
+							</div>
+							<div className="input-data">
+								<input type="text" name="phone" id="phone" required />
+								<label htmlFor="phone">Phone</label>
+							</div>
+						</div>
+						<div className="form-row">
+							<div className="input-data textarea">
+								<textarea name="message" id="message" required></textarea>
+								<label htmlFor="message">Let us know what you need!</label>
+							</div>
+						</div>
+						{/* <div className="submit-btn">
+							<FormSubmitBtn />
+						</div> */}
+						<input
+							className="submit"
+							type="submit"
+							value="Get In Touch"
+							onClick={() => {
+
+							}}
+						/>
+						</form>
 					</div>
 				</div>
 			</div>
