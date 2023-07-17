@@ -44,17 +44,14 @@ const page = () => {
 
 	// Service Content Script
 	const [showContent, setShowcontent] = useState(1);
-    // const [progressHeight, setProgressHeight] = useState(0)
     const handleContent = (itemdId) => {
         setShowcontent(itemdId);
-        // const heightPercentage = (itemdId - 1) * 25;
-        // setProgressHeight(heightPercentage);
     }
 
     useEffect(() => {
         const interval = setInterval(() => {
             setShowcontent((prevContent) => (prevContent % 3) + 1);
-        }, 2500);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);   
