@@ -80,6 +80,7 @@ p{
     padding: 1.5rem;
 }
 
+/* Services Section */
 .services-section,
 .form-section{
     width: 100%;
@@ -99,10 +100,46 @@ p{
     border: 1px solid aqua;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progress{
+    width: 2px;
+    height: 100%;
+    background-color: #f8f8f8;
+}
+
+.circle{
+    width: 15px;
+    height: 15px;
+    background: #f8f8f8;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s ease-in-out forwards;
+    z-index: 10;
+}
+
+.circle1.active{
+    background-color: #0F52BA;
+    transform: scale(1.5);
+    box-shadow: 0px 0px 20px 0px #0F52B8 inset, 0px 0px 10px 5px #0F52B8;
+}
+
+.circle2.active{
+    background-color: #05C878;
+    transform: scale(1.5);
+    box-shadow: 0px 0px 20px 0px #05C878 inset, 0px 0px 10px 5px #05C878;
+}
+
+.circle3.active{
+    background-color: #9966CC;
+    transform: scale(1.5);
+    box-shadow: 0px 0px 20px 0px #9966CC inset, 0px 0px 10px 5px #9966CC;
 }
 
 .services{
-    width: 90%;
+    width: 100%;
     height: 100%;
     border: 1px solid aquamarine;
     position: relative;
@@ -112,8 +149,8 @@ p{
 }
 
 .float{
-    width: 250px;
-    height: 250px;
+    width: 35%;
+    height: 35%;
     border: 1px solid violet;
 }
 
@@ -129,31 +166,75 @@ p{
     right: 0;
 }
 
+.top-img,
+.bottom-img{
+    width: 250px;
+    height: 250px;
+}
+
 .service-content{
     width: 100%;
     height: 100%;
-    max-width: 500px;
-    max-height: 500px;
-    position: relative ;
+    max-width: 700px;
+    max-height: 700px;
+    position: absolute;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     border: 1px solid salmon;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.service-content.active{
+    opacity: 1;
 }
 
 .icon-container{
-    width: 100%;
-    height: 100%;
-    background-color: aliceblue;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5625rem;
+    border: 0.5px solid rgba(248, 248, 248, 0.12);
+    background: linear-gradient(180deg, #1C1E28 0%, rgba(28, 30, 40, 0.00) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
 }
 
-.text-container{
-    width: 80%;
-    height: 25%;
-    background-color: tomato;
+.icon{
+    width: 85%;
+    height: 85%;
+}
+
+.service-text-container{
+    width: 55%;
+    height: 20%;
     position: absolute;
+    top: 40%;
     left: 60%;
+    padding: 25px;
+    border-radius: 1.5625rem;
+    border: 0.5px solid rgba(248, 248, 248, 0.12);
+    background: linear-gradient(180deg, #1C1E28 0%, rgba(28, 30, 40, 0.00) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
     z-index: 5;
+}
+
+.service-heading{
+    margin-bottom: 1rem;
+}
+
+.service-offer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+}
+
+.service-offer p{
+    font-size: 1rem;
 }
 
 /* Form Section */
@@ -163,13 +244,17 @@ p{
 
 .form-section{
     max-width: 45rem;
+    padding-top: 3.5rem;
 }
 
 .form-section .form-text{
-    width: 80%;
+    width: 100%;
 }
 
 .form-text h1.form-heading{
+    background: linear-gradient(45deg, #0F52BA, #9966CC);
+    -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
     margin: 1rem;
 }
 
@@ -215,7 +300,9 @@ form input,
 textarea{
     width: 100%;
     height: 100%;
-    border: 1px solid rgba(248, 248, 248, 0.7);
+    /* border: 1px solid rgba(248, 248, 248, 0.7); */
+    border: .5px solid rgba(248, 248, 248, .02);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: .1875rem;
     background-color: transparent;
 }
@@ -230,14 +317,29 @@ textarea{
 }
 
 .submit{
-    max-width: 200px;
+    width: 150px;
     height: 2.5rem;
     margin-top: 7rem;
     font-family: 'Manrope', sans-serif;
     font-size: .875rem;
     font-weight: 200;
-    color: rgba(248, 248, 248, 0.7)
+    color: rgba(248, 248, 248, 0.7);
+    transition: all .75s ease;
+    border: none;
+    background: none;
+    border: .5px solid rgba(248, 248, 248, .02);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    position: relative;
 }
+
+.submit:hover{
+    font-weight: 400;
+    background-color: #0F52BA;
+    box-shadow: 0px 0px 20px 0px #0F52B8 inset, 0px 0px 20px 0px #0F52B8;
+}  
 
 .input-data input:focus ~ label,
 .input-data input:valid ~ label,
@@ -245,6 +347,37 @@ textarea{
 .input-data textarea:valid ~ label{
     top: -25px;
     left: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+.input-data input:focus,
+.input-data input:valid,
+.input-data textarea:focus,
+.input-data textarea:valid{
+    padding-left: 15px;
+    color: rgba(248, 248, 248, 0.7);
+    font-family: 'Manrope', sans-serif;
+    border: 1px solid rgba(248, 248, 248, 0.7);
+}
+
+.input-data textarea:focus,
+.input-data textarea:valid{
+    padding-top: 15px;
+    font-family: 'Manrope', sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #22242F inset;
+    box-shadow: 0 0 0 30px #22242F inset;
+    font-family: 'Manrope', sans-serif;
+}
+
+input:-webkit-autofill{
+    -webkit-text-fill-color: rgba(248, 248, 248, 0.7) !important;
+    font-family: 'Manrope', sans-serif;
 }
 
 /* Media Queries */
@@ -253,32 +386,45 @@ textarea{
         padding: 0;
     }
 
+    .form-section{
+        padding-top: 0rem;
+    }
+
     .form-section .form-text{
         width: 100%;
     }
 
     .form-text h1.form-heading{
-        font-size: 2.75rem;
+        font-size: 2.25rem;
     }
 
     .form-text p.form-body{
-        font-size: 1rem;
-        line-height: 1.5rem;
-        margin-bottom: 2.5rem;
+        font-size: .9rem;
+        line-height: 1.25rem;
+        margin-bottom: 2rem;
     }
 
     .icon-container{
-        width: 85%;
-        height: 85%;
+        width: 350px;
+        height: 350px;
     }
 
-    .text-container{
-        width: 65%;
+    .float{
+        width: 35%;
+        height: 35%;
+    }
+
+    .service-text-container{
+        width: 50%;
         left: 50%;
     }
 
     textarea{
-        /* width: 26.5rem; */
+        height: 5rem;
+    }
+
+    .submit{
+        margin-top: 1rem;
     }
 }
 
@@ -301,13 +447,10 @@ textarea{
         max-height: 350px;
     }
 
-    .text-container{
-        max-width: 250px;
-        max-height: 100px;
-    }
-
-    textarea{
-        /* max-width: 275px; */
+    .service-text-container{
+        width: 60%;
+        height: 20%;
+        left: 40%;
     }
 }
 
@@ -328,9 +471,17 @@ textarea{
         justify-content: center;
     }
 
+    .content-inner.content-right{
+        height: 100%;
+    }
+
     .services-section,
     .form-section{
         width: 80%;
+    }
+
+    .form-section{
+        padding-top: 3rem;
     }
 
     .icon-container{
@@ -338,9 +489,8 @@ textarea{
         max-height: 500px;
     }
 
-    .text-container{
-        max-width: 300px;
-        left: 50%;
+    .service-text-container{
+        left: 52%;
     }
 
     .form-text h1.form-heading{
@@ -353,12 +503,12 @@ textarea{
         line-height: 1.5rem;
     }
 
-    form .input-data{
-        /* max-width: 300px; */
+    textarea{
+        height: 7rem;
     }
 
-    textarea{
-        /* max-width: 1000px; */
+    .submit{
+        margin-top: 3.5rem;
     }
 }
 
@@ -372,6 +522,7 @@ textarea{
     }
 
     .services-section{
+        width: 100%;
         flex-direction: column;
     }
 
@@ -383,11 +534,72 @@ textarea{
     }
 
     .icon-container{
-        max-width: 350px;
-        max-height: 350px;
+        max-width: 250px;
+        max-height: 250px;
     }
 
-    .text-container{
-        left: 40%;
+    .service-text-container{
+        height: 18%;
+        left: 5%;
+        top: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .service-heading{
+        font-size: 1.25rem;
+        margin-bottom: .5rem;
+    }
+
+    .service-offer p{
+        font-size: .875rem;
+        line-height: 1.125rem;
+    }
+
+    .float{
+        width: 200px;
+        height: 200px;
+    }
+
+    .top-img,
+    .bottom-img{
+        width: 100%;
+        height: 100%;
+    }
+
+    form .form-row{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .submit{
+        width: 100%;
+    }
+    
+    .form-text h1.form-heading{
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+        text-align: center;
+        margin: 0 0 1rem 0;
+    }
+
+    .form-text p.form-body{
+        font-size: .875rem;
+        line-height: 1.35rem;
+        text-align: center;
+        margin: 0 auto 1.5rem auto;
+        width: 90%;
+    }
+}
+
+@media (max-width: 425px){
+    .service-heading{
+        margin-bottom: .5rem;
+    }
+
+    .service-offer p{
+        line-height: 1.25rem;
     }
 }

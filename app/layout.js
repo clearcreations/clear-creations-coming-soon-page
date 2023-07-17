@@ -12,7 +12,7 @@ export const metadata = {
           follow: true,
       },
       viewport: {
-          width: 'device-width',
+        width: 'device-width',
           initialScale: 1,
           maximumScale: 1,
       },
