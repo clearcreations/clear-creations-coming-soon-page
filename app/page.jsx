@@ -121,6 +121,19 @@ const page = () => {
 	]
 
 	// Service Dropdown
+	const [selectedService, setSelectedService] = useState('')
+
+	const serviceOptions = [
+		'Branding',
+		'UI/UX Design',
+		'Search Engine Optimization',
+		'Social Media',
+		'Paid Ads'
+	]
+	
+	const handleServiceChange = (e) => {
+		setSelectedService(e.target.value)
+	}
 
 	return (
 		<div className='content'>
@@ -210,8 +223,14 @@ const page = () => {
 								<label htmlFor="email">Email</label>
 							</div>
 							<div className="input-data">
-								<input type="text" name="phone" id="phone" required />
-								<label htmlFor="phone">Phone</label>
+								<select name="service" id="service" value={selectedService} onChange={handleServiceChange}>
+									<option value="">Select A Service</option>
+									{serviceOptions.map((option) => (
+										<option key={option} value={option}>
+											{option}
+										</option>
+									))}
+								</select>
 							</div>
 						</div>
 						<div className="form-row">
@@ -220,9 +239,6 @@ const page = () => {
 								<label htmlFor="message">Let us know what you need!</label>
 							</div>
 						</div>
-						{/* <div className="submit-btn">
-							<FormSubmitBtn />
-						</div> */}
 						<input
 							className="submit collision"
 							type="submit"
