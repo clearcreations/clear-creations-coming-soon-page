@@ -103,16 +103,22 @@ const page = () => {
 	]
 
 	const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+	const logosPerPage = 4;
 
 	useEffect(() => {
-		//Change logo every 2 seconds
-		const interval = setInterval(() => {
+		const interval = setInterval (() => {
 			setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
-		}, 3000);
+		}, 2000);
 
-		//Clear function
-		return () => clearInterval(interval)
-	}, []);	
+		return () => clearInterval(interval);
+	}, []);
+
+	const displayedLogos = [
+		logos[currentLogoIndex % logos.length],
+		logos[(currentLogoIndex + 1) % logos.length],
+		logos[(currentLogoIndex + 2) % logos.length],
+		logos[(currentLogoIndex + 3) % logos.length]
+	]
 
 	// Service Dropdown
 
@@ -156,6 +162,20 @@ const page = () => {
 										</div>
 									</div>
 								</div>
+							))}
+						</div>
+					</div>
+					<div className="social-proof">
+						<div className="logo-wrapper">
+							{displayedLogos.map((logo, index) => (
+								<Image 
+									key={index} 
+									src={logo}
+									alt={`Logo ${index + 1}`}
+									className='logo'
+									width={100}
+									height={35}
+								/>
 							))}
 						</div>
 					</div>
